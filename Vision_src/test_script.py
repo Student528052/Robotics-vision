@@ -1,4 +1,4 @@
-import cv2
+mport cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -47,4 +47,3 @@ def segment_and_find_longest(image_path):
 image_path = "./test_image.png"
 center = segment_and_find_longest(image_path)
 print("Longest segment center:", center)
-
