@@ -1,0 +1,16 @@
+{
+  "name": "ROS2 Workshop",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "containerEnv": {
+    "ROS_LOCALHOST_ONLY": "0",
+    "LIBGL_ALWAYS_SOFTWARE": "1",
+    "DISPLAY": "${localEnv:DISPLAY}" // should normally be "unix:0"
+  },
+  "mounts": [
+    "source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind,consistency=cached"
+  ],
+  "workspaceFolder": "/home/ros/ros2_ws",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/home/ros/ros2_ws,type=bind,consistency=cached"
+}
