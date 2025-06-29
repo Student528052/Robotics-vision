@@ -1,1 +1,6 @@
 ./*.py
+build/
+install/
+log/
+camera_node/resource/
+camera_node/test/

@@ -14,9 +14,10 @@ After whic, you need to run the `install.sh` script, which creates the node insi
 
 ' # NOTE: if the script has failed ( or is not there likely), you can just follow these commands:<br>
 ```sh
-colcon pkg create camera_node --build-type ament_python --dependencies rclpy
+ros2 pkg create camera_node --build-type ament_python --dependencies rclpy
 
 #creating all nessesary files
+cd camera_node/camera_node
 cp Robotics-vision/Vision_src/test_script.py ./camera_rv_node/camera_rv_node/camera.py
 chmod +x ./camera_rv_node/camera_rv_node/camera.py
 cp Robotics-vision/Vision_src/test_image.png ./camera_rv_node/camera_rv_node/test_image.png

@@ -2,7 +2,7 @@
 # This is with the asumption that the working directory is /home/ros/ros2_ws/
 
 # git clone https://Student528052/Robotics-vision.git
-colcon pkg create camera_rv_node --build-type ament_python --dependencies rclpy
+ros2 pkg create camera_rv_node --build-type ament_python --dependencies rclpy
 
 #moving  all nessesary files
 cp Robotics-vision/Vision_src/test_script.py ./camera_rv_node/camera_rv_node/camera.py
