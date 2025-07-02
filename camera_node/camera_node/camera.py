@@ -20,7 +20,17 @@ class TestScript(Node):
         self.get_logger().info("Hello from node")
        # self.segment_and_find_longest("blank")
 
-    def segment_and_find_longest(image_path, b ):
+    def send_data(self): 
+        arr = [1, 2, 3]
+        return arr
+
+    def show_video(self): 
+        while(True): 
+            ret, frame = self.vid.read()
+            #cv2.imshow("video", frame)
+            if(cv2.waitkey(1) & 0xFF == ord('q')): 
+                break
+    def segment_and_find_longest(image_path):
         #TODO fix code 
         if( not os.path.exists(image_path)): 
             return 
@@ -68,6 +78,10 @@ class TestScript(Node):
 
 def main(args=None):
     rclpy.init(args=args)
+    r = rospy.Rate(60)
+    while (not rospy.is_shutdown())
+        node.show_video() 
+        r.sleep()
     node = TestScript()
     rclpy.spin(node)
     rclpy.shutdown()
