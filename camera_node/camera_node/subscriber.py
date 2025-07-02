@@ -15,9 +15,12 @@ class FloatArraySubscriber(Node):
     def listener_callback(self, msg):
         self.get_logger().info(f'Received: {msg}')
 
-def main():
-    rclpy.init()
+def main(args=None):
+    rclpy.init(args=args)
     node = FloatArraySubscriber()
     rclpy.spin(node)
     node.destroy_node()
     rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
