@@ -1,13 +1,14 @@
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Float32MultiArray
+from std_msgs.msg import Int32MultiArray
 
 class FloatArraySubscriber(Node):
     def __init__(self):
-        super().__init__('float_array_subscriber')
+        super().__init__('int_reciever')
         self.subscription = self.create_subscription(
-            Float32MultiArray,
-            'float_array_topic',
+            Int32MultiArray,
+            'int_topic',
             self.listener_callback,
             10
         )
