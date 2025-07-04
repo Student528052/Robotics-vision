@@ -4,8 +4,10 @@ import numpy as np
 import cv2 as cv
 from math import sqrt, pi, radians, cos, sin
 
-angle, true_length_mm, center = 0
-quat_z = [1,0,0,0]
+angle = 0.0
+true_length_mm = 0.0
+center_mm =[0.0, 0.0]
+quat_z = [1.0,0.0,0.0,0.0]
 # Open the default camera (index 0)
 class CameraDetection():
         
@@ -219,8 +221,8 @@ class CameraDetection():
 
         cam.release()
         cv.destroyAllWindows()
-    def get_data():
-        return [center_mm[0], center_mm[1],0, quat_z[0], quat_z[1],quat_z[2], quat_z[3] ]
+    def get_data(self):
+        return [center_mm[0], center_mm[1],0.0, quat_z[0], quat_z[1],quat_z[2], quat_z[3] ]
 
-    def test_print(): 
+    def test_print(self): 
         return "This is a test message"

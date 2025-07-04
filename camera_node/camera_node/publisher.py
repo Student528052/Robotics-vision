@@ -3,20 +3,20 @@ from rclpy.node import Node
 from std_msgs.msg import Float32MultiArray
 from std_msgs.msg import Int32MultiArray
 
-from main_camera import CameraDetection
+from . import main_camera
 class Sender(Node):
     def __init__(self):
         super().__init__('int_sender')
-        self.publisher_ = self.create_publisher(Int32MultiArray, 'position_topic', 10)
+        self.publisher_ = self.create_publisher(Float32MultiArray, 'position_topic', 10)
         self.timer = self.create_timer(1.0, self.publish_array)
-        self.camera = CameraDetection()
+        self.camera = main_camera.CameraDetection()
 
     def publish_array(self):
-        test = Int32MultiArray()
-        test.data = [1,2,3,4,5]
+        test = Float32MultiArray()
+        test.data = [1.0,2.0,3.0,4.0,5.0]
         camera_data = self.camera.test_print()
-        temp = Int32MultiArray()
-        temp.data = self.camera.get_angle_length()
+        temp = Float32MultiArray()
+        temp.data = self.camera.get_data()
         self.publisher_.publish(test)
         self.get_logger().info(f'Sent: {test}')
 
