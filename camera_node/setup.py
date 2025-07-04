@@ -23,6 +23,7 @@ setup(
             'camera = camera_node.camera:main',
             'sender_node = camera_node.publisher:main',
             'receiver_node = camera_node.subscriber:main',
+            'robotics_node = camera_node.node_to_pose:main'
         ],
     },
 )
