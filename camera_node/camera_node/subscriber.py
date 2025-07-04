@@ -7,7 +7,7 @@ class FloatArraySubscriber(Node):
     def __init__(self):
         super().__init__('int_reciever')
         self.subscription = self.create_subscription(
-            Int32MultiArray,
+        Float32MultiArray,
             'int_topic',
             self.listener_callback,
             10
